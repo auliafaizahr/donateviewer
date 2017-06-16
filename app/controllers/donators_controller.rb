@@ -21,6 +21,14 @@ class DonatorsController < ApplicationController
   	
   end
 
+  def destroy
+  	@donator.destroy
+    respond_to do |format|
+      format.html { redirect_to donators_url, notice: 'Task was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
   def create
   	@donator = Donator.new(donator_params)
 

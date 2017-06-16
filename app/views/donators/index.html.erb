@@ -15,6 +15,9 @@
       <td><%= donator.jenis_kelamin %></td>
       <td><%= donator.alamat %></td>
       <td><%= donator.kontak %></td>
+      <td><%= link_to 'Show', donator_path(donator) %></td>
+      <td><%= link_to 'Edit' %></td>
+      <td><%= link_to 'Destroy', donator_path(donator), method: :delete, data: {confirm: "Are you sure ? "} %></td>
     </tr>
   <% end %>
 
