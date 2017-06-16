@@ -1,0 +1,22 @@
+<h1>List Donator</h1>
+
+<table>
+  <tr>
+    <th>Nama</th>
+    <th>Jenis Kelamin</th>
+    <th>Alamat</th>
+    <th>Kontak</th>
+    <th colspan="4"></th>
+  </tr>
+ 
+  <% @donators.each do |donator| %>
+    <tr>
+      <td><%= donator.nama %></td>
+      <td><%= donator.jenis_kelamin %></td>
+      <td><%= donator.alamat %></td>
+      <td><%= donator.kontak %></td>
+    </tr>
+  <% end %>
+
+  <%= link_to 'Tambah Donator', new_path %>
+</table>

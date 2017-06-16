@@ -4,5 +4,12 @@ Rails.application.routes.draw do
 
  root 'donators#home'
 
+ resources :donators do
+
+ end
+ 
+
+ get 'new' => 'donators#new'
+
 
 end
