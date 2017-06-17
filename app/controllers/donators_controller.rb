@@ -14,7 +14,6 @@ class DonatorsController < ApplicationController
   end
 
   def edit
-  	
   end
 
   def delete
@@ -39,6 +38,26 @@ class DonatorsController < ApplicationController
   def show
   	
   end
+
+  def change
+    @donator.update_attributes(state: params[:state])
+    respond_to do |format|
+      format.html {redirect_to donators_path, notice: "Donator Update"}
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @donator.update(donator_params)
+        format.html { redirect_to @donator, notice: 'Task was successfully updated.' }
+        format.json { render :show, status: :ok, location: @donator }
+      else
+        format.html { render :edit }
+        format.json { render json: @donator.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 
   def index
   	@donators = Donator.all

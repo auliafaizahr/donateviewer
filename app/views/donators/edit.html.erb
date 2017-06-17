@@ -1,0 +1,14 @@
+<h1 class="text-center">Editing Donator</h1>
+
+<%= simple_form_for(@donator) do |f| %>
+
+	<%= f.input :nama %>
+	<%= f.input :jenis_kelamin, collection: ["P", "L"], as: :radio_buttons %>
+	<%= f.input :alamat, placeholder: "Alamat" %>
+	<%= f.input :kontak %>
+ 	<%= f.button :submit, class: "btn btn-lg btn-primary btn-block" %>
+
+<% end %>
+
+<%= link_to 'Show', @donator %> |
+<%= link_to 'Back', donators_path %>

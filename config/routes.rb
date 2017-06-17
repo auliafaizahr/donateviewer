@@ -5,7 +5,9 @@ Rails.application.routes.draw do
  root 'donators#home'
 
  resources :donators do
-
+ 	member  do 
+  		put :change
+  	end
  end
  
 
