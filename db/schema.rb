@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614140626) do
+ActiveRecord::Schema.define(version: 20170618041748) do
 
   create_table "donators", force: :cascade do |t|
     t.string "nama"
     t.string "jenis_kelamin"
     t.text "alamat"
     t.string "kontak"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "receivers", force: :cascade do |t|
+    t.string "nama"
+    t.string "jenis_kelamin"
+    t.date "tanggal_lahir"
+    t.text "alamat"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

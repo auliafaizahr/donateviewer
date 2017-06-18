@@ -1,0 +1,10 @@
+<%= simple_form_for(@receiver) do |f| %>
+
+	<%= f.input :nama %>
+	<%= f.input :jenis_kelamin, collection: ["P", "L"], as: :radio_buttons %>
+	Tanggal Lahir : <%= f.date_select :tanggal_lahir,start_year: Time.now.year - 90, end_year: Time.now.year, label: :tanggal_lahir %> 
+	<%= f.input :alamat, placeholder: "Alamat" %>
+	<%= f.input :status, collection: ["Yatim", "Piatu", "Yatim Piatu", "Dhuafa"], as: :radio_buttons %>
+ 	<%= f.button :submit, class: "btn btn-lg btn-primary btn-block" %>
+
+<% end %>

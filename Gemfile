@@ -62,3 +62,7 @@ gem 'simple_form'
 gem 'devise'
 
 gem 'auto_html', '~>1.6.4'
+
+gem 'will_paginate', '3.0.pre2'
+
+gem 'jquery-rails'

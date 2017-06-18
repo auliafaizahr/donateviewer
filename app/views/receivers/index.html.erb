@@ -1,0 +1,37 @@
+<h1>List Mustahik</h1>
+
+
+
+<%= form_tag receivers_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :nama => nil %>
+  </p>
+<% end %>
+
+
+
+<table>
+  <tr>
+    <th>Nama</th>
+    <th>Jenis Kelamin</th>
+    <th>Tanggal Lahir</th>
+    <th>Alamat</th>
+    <th>Status</th>
+    <th colspan="5"></th>
+  </tr>
+
+ <% @receivers.each do |receiver| %>
+    <tr>
+      <td><%= receiver.nama %></td>
+      <td><%= receiver.jenis_kelamin %></td>
+      <td><%= receiver.tanggal_lahir %></td>
+      <td><%= receiver.alamat %></td>
+      <td><%= receiver.status %></td>
+      <td><%= link_to 'Show'  %></td>
+      <td><%= link_to 'Edit', edit_receiver_path(receiver) %></td>
+      <td><%= link_to 'Destroy' %></td>
+    </tr>
+  <% end %>
+  <%= link_to 'Tambah Mustahik', new_receiver_path %>
+</table>

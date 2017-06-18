@@ -1,14 +1,6 @@
 <h1>Donators#new</h1>
 <p>Untuk halaman tambah donatur</p>
 
-<%= simple_form_for(@donator) do |f| %>
-
-	<%= f.input :nama %>
-	<%= f.input :jenis_kelamin, collection: ["P", "L"], as: :radio_buttons %>
-	<%= f.input :alamat, placeholder: "Alamat" %>
-	<%= f.input :kontak %>
- 	<%= f.button :submit, class: "btn btn-lg btn-primary btn-block" %>
-
-<% end %>
+<%= render 'form', donator: @donator %>
 
 <%= link_to 'Index', donators_path %>
