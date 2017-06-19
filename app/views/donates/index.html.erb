@@ -1,0 +1,25 @@
+<h1>Daftar Donasi</h1>
+
+
+
+<%= form_tag receivers_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :nama => nil %>
+  </p>
+<% end %>
+
+
+
+<table>
+  <tr>
+    <th>Tanggal Donasi</th>
+    <th>Donatur</th>
+    <th>Donasi </th>
+    <th>Alamat</th>
+    <th>Status</th>
+    <th colspan="5"></th>
+  </tr>
+
+  <%= link_to 'Tambah Donasi', new_receiver_path %>
+</table>

@@ -1,0 +1,9 @@
+<%= simple_form_for(@donate) do |f| %>
+
+	<%= f.collection_select :donator, Donator.all , :id, :nama, :prompt => "Pilih Donator" %>
+	<%= f.input :tgl_donasi %>
+
+	
+ 	<%= f.button :submit, class: "btn btn-lg btn-primary btn-block" %>
+
+<% end %>

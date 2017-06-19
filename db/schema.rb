@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170618041748) do
+ActiveRecord::Schema.define(version: 20170619070931) do
+
+  create_table "donates", force: :cascade do |t|
+    t.string "donator"
+    t.date "tgl_donasi"
+    t.boolean "dana"
+    t.boolean "barang"
+    t.integer "besar_dana"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "donators", force: :cascade do |t|
     t.string "nama"

@@ -61,7 +61,8 @@ class DonatorsController < ApplicationController
 
   def index
   	@donators = Donator.all
-  	respond_with(@donators)
+   @donators = @donators.search(params[:search]) if params[:search].present?
+   respond_with(@donators)
   end
 
    private

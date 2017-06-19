@@ -1,5 +1,15 @@
 <h1>List Donator</h1>
 
+
+
+<%= form_tag donators_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :nama => nil %>
+  </p>
+<% end %>
+
+
 <table>
   <tr>
     <th>Nama</th>

@@ -27,11 +27,22 @@ class ReceiversController < ApplicationController
 	end
 
 	def change
-		
+		@receiver.update_attributes(state: params[:state])
+    	respond_to do |format|
+      	format.html {redirect_to receivers_path, notice: "Mustahik Updated"}
+    end
 	end
 
 	def update
-		
+		respond_to do |format|
+      if @receiver.update(receiver_params)
+        format.html { redirect_to @receiver, notice: 'Task was successfully updated.' }
+        format.json { render :show, status: :ok, location: @receiver }
+      else
+        format.html { render :edit }
+        format.json { render json: @receiver.errors, status: :unprocessable_entity }
+      end
+    end
 	end
 
 	def edit
@@ -43,7 +54,11 @@ class ReceiversController < ApplicationController
 	end
 
 	def destroy
-		
+		@receiver.destroy
+   	 respond_to do |format|
+      format.html { redirect_to receivers_url, notice: 'Task was successfully destroyed.' }
+      format.json { head :no_content }
+    end
 	end
 
 	private

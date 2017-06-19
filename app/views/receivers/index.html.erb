@@ -28,9 +28,9 @@
       <td><%= receiver.tanggal_lahir %></td>
       <td><%= receiver.alamat %></td>
       <td><%= receiver.status %></td>
-      <td><%= link_to 'Show'  %></td>
+      <td><%= link_to 'Show', ''  %></td>
       <td><%= link_to 'Edit', edit_receiver_path(receiver) %></td>
-      <td><%= link_to 'Destroy' %></td>
+      <td><%= link_to 'Destroy', receiver_path(receiver), method: :delete, data: {confirm: "Are you sure ? "} %></td>
     </tr>
   <% end %>
   <%= link_to 'Tambah Mustahik', new_receiver_path %>
