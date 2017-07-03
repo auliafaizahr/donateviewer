@@ -1,9 +1,15 @@
 <%= simple_form_for(@donate) do |f| %>
 
-	<%= f.collection_select :donator, Donator.all , :id, :nama, :prompt => "Pilih Donator" %>
+	Donatur : <%= f.collection_select :donator, Donator.all , :id, :nama, :prompt => "Pilih Donator" %>
 	<%= f.input :tgl_donasi %>
+	Bentuk Donasi : <%= f.input :dana, collection: ["dana", "barang"], as: :check_boxes %>
+ 	<%= f.input :besar_dana %>
 
+ 	<% for i in 0..9 do %>
+  	<%= f.input :bentuk_barang[i] %>
+	<% end %>
 	
+
  	<%= f.button :submit, class: "btn btn-lg btn-primary btn-block" %>
 
 <% end %>
